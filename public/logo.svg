@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font-family: Arial, sans-serif; font-weight: bold; }
+    .primary { fill: #1976D2; }
+    .secondary { fill: #2196F3; }
+  </style>
+  <g transform="translate(10, 35)">
+    <!-- Truck Icon -->
+    <path class="primary" d="M20,0 L35,0 L35,15 L20,15 Z M35,5 L45,5 L45,20 L35,20 Z M15,10 L20,10 L20,15 L15,15 Z M40,20 L45,20 L45,25 L40,25 Z M10,20 L15,20 L15,25 L10,25 Z" />
+    <circle class="secondary" cx="15" cy="25" r="5" />
+    <circle class="secondary" cx="40" cy="25" r="5" />
+    <!-- Text -->
+    <text x="55" y="15" class="text primary" font-size="20">LOGISTICS</text>
+    <text x="55" y="30" class="text secondary" font-size="12">MANAGEMENT</text>
+  </g>
+</svg> 
