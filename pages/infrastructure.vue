@@ -2,7 +2,7 @@
   <div>
     <v-row>
       <v-col cols="12">
-        <h1 class="text-h4 mb-6">Infrastructure</h1>
+        <h1 class="text-h4 mb-6">Production & Warehouse Infrastructure</h1>
       </v-col>
     </v-row>
 
@@ -31,7 +31,7 @@
     <v-row class="mt-4">
       <v-col cols="12" md="6">
         <v-card elevation="2">
-          <v-card-title>System Load</v-card-title>
+          <v-card-title>Production & Warehouse Metrics</v-card-title>
           <v-card-text>
             <div ref="systemLoadChart"></div>
           </v-card-text>
@@ -40,7 +40,7 @@
 
       <v-col cols="12" md="6">
         <v-card elevation="2">
-          <v-card-title>Network Traffic</v-card-title>
+          <v-card-title>Delivery & Shipment Volume</v-card-title>
           <v-card-text>
             <div ref="networkTrafficChart"></div>
           </v-card-text>
@@ -94,46 +94,46 @@ definePageMeta({
 
 const systems = [
   {
-    name: 'Server Infrastructure',
+    name: 'Warehouse Operations',
     status: 'Operational',
-    description: 'All servers running normally'
+    description: 'Warehouse systems running at full capacity'
   },
   {
-    name: 'Database Systems',
+    name: 'Fleet Management',
     status: 'Operational',
-    description: 'Database performance optimal'
+    description: 'All vehicles operational and tracked'
   },
   {
-    name: 'Network Infrastructure',
+    name: 'Production Lines',
     status: 'Critical',
-    description: 'High latency detected'
+    description: 'Line 3 requires maintenance'
   },
   {
-    name: 'Security Systems',
+    name: 'Storage Systems',
     status: 'Operational',
-    description: 'All security measures active'
+    description: 'Storage capacity at 75%'
   }
 ]
 
 const maintenanceSchedule = [
   {
     id: 1,
-    system: 'Server Infrastructure',
-    description: 'Routine maintenance and updates',
+    system: 'Production Line 3',
+    description: 'Emergency maintenance - conveyor belt replacement',
     scheduled: 'Scheduled: Mar 20, 2024',
     status: 'Pending'
   },
   {
     id: 2,
-    system: 'Database Systems',
-    description: 'Database optimization',
+    system: 'Warehouse HVAC',
+    description: 'Regular maintenance and filter replacement',
     scheduled: 'Completed: Mar 15, 2024',
     status: 'Completed'
   },
   {
     id: 3,
-    system: 'Network Infrastructure',
-    description: 'Emergency maintenance',
+    system: 'Fleet Vehicles',
+    description: 'Quarterly vehicle inspection and maintenance',
     scheduled: 'Scheduled: Mar 18, 2024',
     status: 'Pending'
   }
@@ -155,11 +155,11 @@ const getSystemLoadOptions = () => ({
     zoom: { enabled: false }
   },
   series: [{
-    name: 'CPU Usage',
-    data: [45, 52, 38, 45, 19, 23, 40]
+    name: 'Production Efficiency',
+    data: [85, 92, 88, 95, 89, 93, 90]
   }, {
-    name: 'Memory Usage',
-    data: [35, 41, 35, 51, 49, 62, 69]
+    name: 'Warehouse Capacity',
+    data: [65, 71, 75, 82, 79, 85, 75]
   }],
   xaxis: {
     categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
@@ -195,11 +195,11 @@ const getNetworkTrafficOptions = () => ({
     zoom: { enabled: false }
   },
   series: [{
-    name: 'Inbound',
-    data: [31, 40, 28, 51, 42, 109, 100]
+    name: 'Inbound Deliveries',
+    data: [31, 40, 28, 51, 42, 29, 30]
   }, {
-    name: 'Outbound',
-    data: [11, 32, 45, 32, 34, 52, 41]
+    name: 'Outbound Shipments',
+    data: [41, 32, 45, 32, 34, 42, 41]
   }],
   xaxis: {
     categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
@@ -208,7 +208,7 @@ const getNetworkTrafficOptions = () => ({
   yaxis: {
     labels: { 
       style: { colors: '#666' },
-      formatter: (value: number) => `${value} MB/s`
+      formatter: (value: number) => `${value} units`
     }
   },
   colors: ['#2196F3', '#FFC107'],
@@ -230,7 +230,7 @@ const getNetworkTrafficOptions = () => ({
   tooltip: {
     theme: 'light',
     y: {
-      formatter: (value: number) => `${value} MB/s`
+      formatter: (value: number) => `${value} units`
     }
   }
 })
